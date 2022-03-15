@@ -1,0 +1,19 @@
+server:
+  port: 8182
+
+spring:
+  application:
+    name: redis-cluster-demo
+  #Redis Config
+  redis:
+    database: 0
+    timeout: 10000
+    pool:
+      maxIdle: 300
+      minIdle: 50
+      maxActive: 1000
+    cluster:
+      nodes: 192.168.30.178:7001,192.168.30.178:7002,192.168.30.178:7003,192.168.30.178:7004,192.168.30.178:7005,192.168.30.178:7006
+      connTimeOut: 1000 #连接server超时时间
+      soTimeOut: 1000 #等待response超时时间
+      maxAttempts: 2 #连接失败重试次数
